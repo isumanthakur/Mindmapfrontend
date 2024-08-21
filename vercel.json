@@ -1,8 +1,7 @@
 {
     "build": {
-      "env": {
-        "NODE_OPTIONS": "--legacy-peer-deps"
-      }
+      "env": {},
+      "command": "npm run install:legacy && npm run build"
     }
   }
   
