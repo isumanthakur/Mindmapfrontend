@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import ReactAudioPlayer from 'react-audio-player';
-import { usePalette } from 'react-palette';
 import { FaArrowLeft } from 'react-icons/fa';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFaceSmile, faFaceSadCry, faFaceMeh, faFaceAngry, faFaceFrown } from '@fortawesome/free-regular-svg-icons';
@@ -135,7 +134,7 @@ const HomePage: React.FC = () => {
       designation: "",
       content: (
         <p>
-"Your present circumstances don't determine where you can go; they merely determine where you start. It's not about erasing the past or changing what has happened, but about writing the next chapter in a way that feels true to who you are becoming."
+          "Your present circumstances don't determine where you can go; they merely determine where you start. It's not about erasing the past or changing what has happened, but about writing the next chapter in a way that feels true to who you are becoming."
         </p>
       ),
     },
@@ -145,7 +144,7 @@ const HomePage: React.FC = () => {
       designation: "",
       content: (
         <p>
-"You are allowed to feel messed up and inside out. It doesn't mean you're defective—it just means you're human. Embrace the messiness of life, and know that every emotion, every thought, is a thread in the rich tapestry of your existence."
+          "You are allowed to feel messed up and inside out. It doesn't mean you're defective—it just means you're human. Embrace the messiness of life, and know that every emotion, every thought, is a thread in the rich tapestry of your existence."
         </p>
       ),
     },
@@ -155,7 +154,7 @@ const HomePage: React.FC = () => {
       designation: "",
       content: (
         <p>
-"Sometimes, the bravest thing you can do is to keep going when you feel like giving up. Healing isn't about becoming someone else; it's about embracing who you already are with kindness and compassion, even when the world feels heavy."
+          "Sometimes, the bravest thing you can do is to keep going when you feel like giving up. Healing isn't about becoming someone else; it's about embracing who you already are with kindness and compassion, even when the world feels heavy."
         </p>
       ),
     },
@@ -318,12 +317,13 @@ const SongDrawer: React.FC<{ selectedSong: Song; setIsDrawerOpen: (isOpen: boole
   selectedSong,
   setIsDrawerOpen,
 }) => {
-  const { data } = usePalette(selectedSong.album.images[0].url);
+  // Use a fixed color for the drawer background instead of dynamically generating it
+  const drawerBackgroundColor = "#FFDDC1"; // A light peach color for a warm, welcoming feel
 
   return (
     <motion.div
       className="song-drawer absolute top-0 bottom-0 left-0 right-0 text-center p-4 rounded-3xl"
-      style={{ backgroundColor: data.vibrant, zIndex: 30 }}
+      style={{ backgroundColor: drawerBackgroundColor, zIndex: 30 }}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1, transition: { duration: 0.3, ease: "easeOut" } }}
       exit={{ opacity: 0, scale: 0.8, transition: { duration: 0.3, ease: "easeIn" } }}
