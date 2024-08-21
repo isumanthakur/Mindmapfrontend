@@ -28,7 +28,7 @@ export function TabsDemo() {
       value: "services",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white glassmorphism">
-          <p>Get all you fav music intigrated right in the page</p>
+          <p>Get all you fav music integrated right in the page</p>
           <DummyContent imageSrc="/2.jpg" />
         </div>
       ),
@@ -38,7 +38,7 @@ export function TabsDemo() {
       value: "playground",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white glassmorphism">
-          <p>Understand you moods, and identify patterns with chart and AI</p>
+          <p>Understand your moods, and identify patterns with chart and AI</p>
           <DummyContent imageSrc="/31.jpeg" />
         </div>
       ),
@@ -461,7 +461,7 @@ const Home: React.FC = () => {
         </WobbleCard>
 
         <WobbleCard containerClassName="col-span-1 min-h-[300px] glassmorphism">
-          <h2 className="max-w-80 text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-black  dark:text-white">
+          <h2 className="max-w-80 text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-black  dark:text:white">
             Unlock Your Inner Strength
           </h2>
           <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-500">

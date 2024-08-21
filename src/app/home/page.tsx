@@ -135,7 +135,7 @@ const HomePage: React.FC = () => {
       designation: "",
       content: (
         <p>
-          "Your present circumstances don't determine where you can go; they merely determine where you start. It's not about erasing the past or changing what has happened, but about writing the next chapter in a way that feels true to who you are becoming."
+          &quot;Your present circumstances don&apos;t determine where you can go; they merely determine where you start. It&apos;s not about erasing the past or changing what has happened, but about writing the next chapter in a way that feels true to who you are becoming.&quot;
         </p>
       ),
     },
@@ -145,7 +145,7 @@ const HomePage: React.FC = () => {
       designation: "",
       content: (
         <p>
-          "You are allowed to feel messed up and inside out. It doesn't mean you're defective—it just means you're human. Embrace the messiness of life, and know that every emotion, every thought, is a thread in the rich tapestry of your existence."
+          &quot;You are allowed to feel messed up and inside out. It doesn&apos;t mean you&apos;re defective—it just means you&apos;re human. Embrace the messiness of life, and know that every emotion, every thought, is a thread in the rich tapestry of your existence.&quot;
         </p>
       ),
     },
@@ -155,7 +155,7 @@ const HomePage: React.FC = () => {
       designation: "",
       content: (
         <p>
-          "Sometimes, the bravest thing you can do is to keep going when you feel like giving up. Healing isn't about becoming someone else; it's about embracing who you already are with kindness and compassion, even when the world feels heavy."
+          &quot;Sometimes, the bravest thing you can do is to keep going when you feel like giving up. Healing isn&apos;t about becoming someone else; it&apos;s about embracing who you already are with kindness and compassion, even when the world feels heavy.&quot;
         </p>
       ),
     },
