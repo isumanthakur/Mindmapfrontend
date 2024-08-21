@@ -1,33 +1,80 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* globals.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-orange-100 dark:bg-black text-black dark:text-white;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.artist-list {
+  @apply truncate;
+  max-width: 100%;
+}
+
+.custom-audio-player {
+  @apply bg-transparent;
+}
+.glassmorphism {
+  background: rgba(105, 0, 100, 0.15); /* Adjust the transparency as needed */
+  backdrop-filter: blur(10px); /* Add a blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: add a subtle border */
+ 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Optional: soft shadow */
+}
+.glassmorphism3 {
+  background: rgba(105, 0, 100, 0.2); /* Adjust the transparency as needed */
+  backdrop-filter: blur(40px); /* Add a blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: add a subtle border */
+ 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Optional: soft shadow */
+}
+.glassmorphism2 {
+  background: rgba(255, 255, 255, 0.5); /* Adjust the transparency as needed */
+  backdrop-filter: blur(10px); /* Add a blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: add a subtle border */
+  border-radius: 15px; /* Optional: rounded corners */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Optional: soft shadow */
+}
+.gradient-bg {
+  background: linear-gradient(45deg, #fb7185, #7873f5, #a78bfa, #fb7185);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+  border-radius: 15px; /* Ensures rounded corners */
+  opacity: 0.8;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
+.no-visible-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
