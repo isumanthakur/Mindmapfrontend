@@ -34,9 +34,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
   useEffect(() => {
     const handleTokenChange = () => {
-      const token = localStorage.getItem("token");
-      setIsLoggedIn(!!token);
-      console.log('Token updated, Is Logged In:', !!token);
+      setTimeout(() => {
+        const token = localStorage.getItem("token");
+        setIsLoggedIn(!!token);
+        console.log('Token updated, Is Logged In:', !!token);
+      }, 100); // Add a slight delay to ensure token is set
     };
 
     window.addEventListener('tokenChanged', handleTokenChange);
