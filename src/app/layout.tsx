@@ -19,34 +19,33 @@ export default function RootLayout({ children }: RootLayoutProps) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  const checkLoginStatus = () => {
+    const token = localStorage.getItem("token");
+    console.log('Token from localStorage:', token);
+    setIsLoggedIn(!!token);
+    console.log('Is Logged In:', !!token);
+  };
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const token = localStorage.getItem("token");
-      console.log('Token from localStorage:', token);
-      setIsLoggedIn(!!token);
-      console.log('Is Logged In:', !!token);
+      checkLoginStatus();
 
       const darkModePreference = localStorage.getItem("darkMode") === "true";
       setIsDarkMode(darkModePreference);
       document.documentElement.classList.toggle("dark", darkModePreference);
+
+      // Listen for token changes
+      const handleTokenChange = () => {
+        checkLoginStatus();
+      };
+
+      window.addEventListener('tokenChanged', handleTokenChange);
+
+      return () => {
+        window.removeEventListener('tokenChanged', handleTokenChange);
+      };
     }
   }, [pathname]);
-
-  useEffect(() => {
-    const handleTokenChange = () => {
-      setTimeout(() => {
-        const token = localStorage.getItem("token");
-        setIsLoggedIn(!!token);
-        console.log('Token updated, Is Logged In:', !!token);
-      }, 100); // Add a slight delay to ensure token is set
-    };
-
-    window.addEventListener('tokenChanged', handleTokenChange);
-
-    return () => {
-      window.removeEventListener('tokenChanged', handleTokenChange);
-    };
-  }, []);
 
   const toggleDarkMode = () => {
     setIsDarkMode(prevMode => {
@@ -58,7 +57,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className=''>
       <body className={inter.className}>
         {isLoggedIn ? <BackgroundShape /> : <LoggedOutBackgroundShape />}
         <ClientNavbar 
