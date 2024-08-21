@@ -16,6 +16,7 @@ const LoginPage: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     
+    // API call to login
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users/login/`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -24,17 +25,24 @@ const LoginPage: React.FC = () => {
 
     const data = await response.json();
 
+    // Log the response from the API to ensure we're receiving a token
+    console.log('API Response:', data);
+
     if (data.token) {
+      // Log the token before setting it in localStorage
+      console.log('Token received:', data.token);
+
       // Set the token in localStorage
       localStorage.setItem('token', data.token);
 
-      // Dispatch a custom event to notify other parts of the app
+      // Verify the token was set correctly
+      console.log('Token set in localStorage:', localStorage.getItem('token'));
+
+      // Dispatch an event to notify other parts of the app
       window.dispatchEvent(new Event('tokenChanged'));
 
-      // Delay the redirection to ensure the token is properly set
-      setTimeout(() => {
-        router.push('/home');
-      }, 100);  // Adjust this delay as necessary
+      // Redirect to the home page
+      router.push('/home');
     } else {
       alert('Login failed');
     }
