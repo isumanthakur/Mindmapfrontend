@@ -53,6 +53,7 @@ const LoginPage: React.FC = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeInOut" } }
   };
 
+
   return (
     <div className="relative flex pt-24 flex-col md:flex-row justify-between md:pr-20 md:pl-20 items-center h-screen w-screen bg-peach-100">
       {/* SVG Shapes in Background */}

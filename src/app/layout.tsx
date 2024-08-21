@@ -47,6 +47,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
     }
   }, [pathname]);
 
+  // Ensure that token is set properly during the initial render
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      console.log('Token found during hydration:', token);
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   const toggleDarkMode = () => {
     setIsDarkMode(prevMode => {
       const newMode = !prevMode;
