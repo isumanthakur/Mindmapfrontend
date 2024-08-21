@@ -315,8 +315,7 @@ const cards = [
     audioSrc: "/sajnire.mp3", // Replace with the actual path in your public folder
     content: () => {
       return (
-        <p>
-"Sajni Re" from the movie Lappata Ladies is a soulful and melodic song that combines traditional Indian music with contemporary elements. The track features hauntingly beautiful vocals that express longing and emotion, set against a backdrop of acoustic instruments like the sitar and tabla, along with subtle electronic beats. The lyrics convey themes of love, yearning, and the passage of time, creating a poignant and reflective mood. The fusion of classical and modern sounds in "Sajni Re" makes it a captivating and evocative piece, resonating with both traditional and modern audiences.        </p>
+        <p>&quot;Sajni Re&quot; from the movie Lappata Ladies is a soulful and melodic song that combines traditional Indian music with contemporary elements. The track features hauntingly beautiful vocals that express longing and emotion, set against a backdrop of acoustic instruments like the sitar and tabla, along with subtle electronic beats. The lyrics convey themes of love, yearning, and the passage of time, creating a poignant and reflective mood. The fusion of classical and modern sounds in &quot;Sajni Re&quot; makes it a captivating and evocative piece, resonating with both traditional and modern audiences.</p>
       );
     },
   },
@@ -328,9 +327,8 @@ const cards = [
     audioSrc: "/3.mp3", // Replace with the actual path in your public folder
     content: () => {
       return (
-        <p>
-"Aasa Kooda" is a popular Tamil song from the movie Attakathi (2012). Composed by Santhosh Narayanan and sung by Pradeep Kumar, the song is known for its soulful melody and heartfelt lyrics. The song beautifully captures the emotions of longing and unrequited love, portraying the internal struggles of the protagonist. With its simple yet evocative music arrangement, "Aasa Kooda" has resonated with many listeners, making it one of the memorable tracks in Tamil cinema. The lyrics, penned by Kabilan, further enhance the emotional depth of the song, making it a favorite among fans of Tamil music.        </p>
-      );
+        <p>&quot;Aasa Kooda&quot; is a popular Tamil song from the movie Attakathi (2012). Composed by Santhosh Narayanan and sung by Pradeep Kumar, the song is known for its soulful melody and heartfelt lyrics. The song beautifully captures the emotions of longing and unrequited love, portraying the internal struggles of the protagonist. With its simple yet evocative music arrangement, &quot;Aasa Kooda&quot; has resonated with many listeners, making it one of the memorable tracks in Tamil cinema. The lyrics, penned by Kabilan, further enhance the emotional depth of the song, making it a favorite among fans of Tamil music.</p>
+ );
     },
   },
   {
@@ -341,9 +339,8 @@ const cards = [
     audioSrc: "/4.mp3", // Replace with the actual path in your public folder
     content: () => {
       return (
-        <p>
-"Harleys in Hawaii" by Katy Perry is a dreamy, tropical pop song that captures the essence of a romantic escapade in Hawaii. With its smooth, laid-back melody and Perry's sultry vocals, the song paints a picture of riding motorcycles along scenic Hawaiian roads, enjoying the warm breeze and the thrill of adventure with a lover. The track's lush instrumentals and catchy chorus evoke a sense of freedom and island vibes, making it a perfect soundtrack for a sun-soaked getaway.        </p>
-      );
+        <p>&quot;Harleys in Hawaii&quot; by Katy Perry is a dreamy, tropical pop song that captures the essence of a romantic escapade in Hawaii. With its smooth, laid-back melody and Perry&apos;s sultry vocals, the song paints a picture of riding motorcycles along scenic Hawaiian roads, enjoying the warm breeze and the thrill of adventure with a lover. The track&apos;s lush instrumentals and catchy chorus evoke a sense of freedom and island vibes, making it a perfect soundtrack for a sun-soaked getaway.</p>
+ );
     },
   },
   {
@@ -354,9 +351,8 @@ const cards = [
     audioSrc: "/5.mp3", // Replace with the actual path in your public folder
     content: () => {
       return (
-        <p>
-"We Don't Talk Anymore" by Charlie Puth, featuring Selena Gomez, is a catchy pop song that delves into the aftermath of a breakup. Released in 2016, the song features a smooth, tropical-inspired beat paired with Puth and Gomez's emotive vocals. The lyrics reflect the pain and longing that come from losing touch with someone you once cared deeply about, capturing the bittersweet feeling of moving on while still being haunted by memories. The blend of mellow instrumentals and heartfelt lyrics makes it a relatable anthem about love, loss, and the distance that often follows a breakup.        </p>
-      );
+        <p>&quot;We Don&apos;t Talk Anymore&quot; by Charlie Puth, featuring Selena Gomez, is a catchy pop song that delves into the aftermath of a breakup. Released in 2016, the song features a smooth, tropical-inspired beat paired with Puth and Gomez&apos;s emotive vocals. The lyrics reflect the pain and longing that come from losing touch with someone you once cared deeply about, capturing the bittersweet feeling of moving on while still being haunted by memories. The blend of mellow instrumentals and heartfelt lyrics makes it a relatable anthem about love, loss, and the distance that often follows a breakup.</p>
+ );
     },
   },
 ];
@@ -465,8 +461,7 @@ const Home: React.FC = () => {
             Unlock Your Inner Strength
           </h2>
           <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-500">
-            Explore the tools and practices that can help you build resilience and navigate life's challenges with confidence.
-          </p>
+          Explore the tools and practices that can help you build resilience and navigate life&apos;s challenges with confidence          </p>
         </WobbleCard>
 
         <WobbleCard containerClassName="col-span-1 lg:col-span-3 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px] glassmorphism">
