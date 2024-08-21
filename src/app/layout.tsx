@@ -21,12 +21,30 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      setIsLoggedIn(!!localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
+      console.log('Token from localStorage:', token);
+      setIsLoggedIn(!!token);
+      console.log('Is Logged In:', !!token);
+
       const darkModePreference = localStorage.getItem("darkMode") === "true";
       setIsDarkMode(darkModePreference);
       document.documentElement.classList.toggle("dark", darkModePreference);
     }
   }, [pathname]);
+
+  useEffect(() => {
+    const handleTokenChange = () => {
+      const token = localStorage.getItem("token");
+      setIsLoggedIn(!!token);
+      console.log('Token updated, Is Logged In:', !!token);
+    };
+
+    window.addEventListener('tokenChanged', handleTokenChange);
+
+    return () => {
+      window.removeEventListener('tokenChanged', handleTokenChange);
+    };
+  }, []);
 
   const toggleDarkMode = () => {
     setIsDarkMode(prevMode => {
@@ -38,7 +56,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   };
 
   return (
-    <html lang="en" className=''>
+    <html lang="en">
       <body className={inter.className}>
         {isLoggedIn ? <BackgroundShape /> : <LoggedOutBackgroundShape />}
         <ClientNavbar 
