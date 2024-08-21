@@ -92,7 +92,7 @@ const JournalPage: React.FC = () => {
         animate={{ x: showPreviousEntries ? 0 : -100 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <h2 className="text-xl mt- text-center font-semibold mb-4">Previous Entries</h2>
+        <h2 className="text-xl text-center font-semibold mb-4">Previous Entries</h2>
         {errorMessage && <div className="error">{errorMessage}</div>}
         <ul className="space-y-2">
           {journalEntries.map(entry => (

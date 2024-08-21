@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FaHeart, FaComment } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 type CommentType = {
   id: number;
@@ -255,7 +256,7 @@ const CommunityPage: React.FC = () => {
           }
         ].map((doc, index) => (
           <div key={index} className="p-4 rounded-3xl flex flex-col items-center text-center" style={{ backdropFilter: 'blur(10px)', background: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.3)', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', zIndex: 30 }}>
-            <img src={doc.imgSrc} alt={doc.title} className="rounded-full opacity-50 mb-4"/>
+            <Image src={doc.imgSrc} alt={doc.title} className="rounded-full opacity-50 mb-4" width={150} height={150}/>
             <h3 className="font-semibold mb-2">{doc.title}</h3>
           </div>
         ))}

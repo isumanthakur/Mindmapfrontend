@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFaceSmile, faFaceSadCry, faFaceMeh, faFaceAngry, faFaceFrown } from '@fortawesome/free-regular-svg-icons';
 import { CardStack } from "@/components/ui/card-stack"; 
 import { motion } from "framer-motion";
+import Image from 'next/image';
 
 interface Artist {
   name: string;
@@ -297,7 +298,7 @@ const HomePage: React.FC = () => {
                     }}
                     whileHover={{ scale: 1.05 }}
                   >
-                    <img src={song.album.images[0].url} alt="Album Art" className="song-cover w-12 h-12 rounded-lg" />
+                    <Image src={song.album.images[0].url} alt="Album Art" className="song-cover rounded-lg" width={48} height={48} />
                     <span className="text-start">{song.name}</span>
                   </motion.div>
                 ))}
@@ -331,10 +332,12 @@ const SongDrawer: React.FC<{ selectedSong: Song; setIsDrawerOpen: (isOpen: boole
       <button onClick={() => setIsDrawerOpen(false)} className="text-black">
         <FaArrowLeft />
       </button>
-      <img
+      <Image
         src={selectedSong.album.images[0].url}
         alt="Album Art"
-        className="album-art-large w-32 h-32 rounded-2xl mx-auto my-4"
+        className="album-art-large rounded-2xl mx-auto my-4"
+        width={128}
+        height={128}
       />
       <h3 className="text-lg font-medium">{selectedSong.name}</h3>
       <p className="artist-list">{selectedSong.artists.map((artist: Artist) => artist.name).join(', ')}</p>
